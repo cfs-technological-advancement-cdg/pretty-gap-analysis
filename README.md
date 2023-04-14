@@ -40,9 +40,11 @@ You can use the following command-line options to configure the running of the a
 4. Choose `Summarised Data`
 5. Save the generated Excel file locally, remove the first **two** rows, and save as a **CSV**
 
-## Acknowledgements
+## Todo
 
-Lorem ipsum
+[ ] Integration with Office365 to save output to a Sharepoint folder
+[ ] Integration with Beacon for updating qualifications assigned
+[ ] Integration with BART for updating qualifications and qualification expiries
 
 ## License
 
