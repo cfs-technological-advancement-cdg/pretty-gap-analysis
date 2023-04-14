@@ -25,7 +25,8 @@ If you don't know what this means, then this repository is probably not for you.
 You can use the following command-line options to configure the running of the application:
 
 `-p --path`: Path of the input CSV file\
-`-o --output`: Filename for the generated html report
+`-o --output`: Filename for the generated html report\
+`-i --ignore`: Comma seperated list of member ids to exclude from the report
 
 ## Exporting Capability Data
 

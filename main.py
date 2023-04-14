@@ -1,6 +1,7 @@
 import os
 from templater import generate_html_template
 from utils.codes import get_qualifications
+from utils.ignore import process_ignore_list
 from utils.process_data import process_qualifications_export
 import argparse
 
@@ -8,6 +9,7 @@ import argparse
 parser = argparse.ArgumentParser("member_capability")
 parser.add_argument("-p", "--path", help="The path of the member capability CSV export", type=str, required=False)
 parser.add_argument("-o", "--output", help="The filename of file outputted", type=str, required=False, default="generated-gap.html")
+parser.add_argument("-i", "--ignore", help="Commaseparated list of member numbers to ignore", type=str, required=False, default=None)
 args = parser.parse_args()
 
 def generate():
@@ -20,6 +22,9 @@ def generate():
 
 	# Process qualifications csv
 	members = process_qualifications_export(path)
+
+	# Remove ignored members
+	members = process_ignore_list(members, args.ignore)
 
 	# Generate HTML template
 	generate_html_template(members, qualifications, args.output)
