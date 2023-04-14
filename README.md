@@ -42,9 +42,9 @@ You can use the following command-line options to configure the running of the a
 
 ## Todo
 
-[ ] Integration with Office365 to save output to a Sharepoint folder
-[ ] Integration with Beacon for updating qualifications assigned
-[ ] Integration with BART for updating qualifications and qualification expiries
+- [ ] Integration with Office365 to save output to a Sharepoint folder
+- [ ] Integration with Beacon for updating qualifications assigned
+- [ ] Integration with BART for updating qualifications and qualification expiries
 
 ## License
 
