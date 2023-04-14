@@ -4,12 +4,15 @@ from utils.codes import get_qualifications
 from utils.process_data import process_qualifications_export
 import argparse
 
+# Add argument parser
 parser = argparse.ArgumentParser("member_capability")
 parser.add_argument("-p", "--path", help="The path of the member capability CSV export", type=str, required=False)
 parser.add_argument("-o", "--output", help="The filename of file outputted", type=str, required=False, default="generated-gap.html")
 args = parser.parse_args()
 
 def generate():
+	""" Process all data and generate the HTML template
+	"""
 	qualifications = get_qualifications()
 
 	# Request path of qualifications csv
@@ -21,7 +24,12 @@ def generate():
 	# Generate HTML template
 	generate_html_template(members, qualifications, args.output)
 
-def load_csv_path():
+def load_csv_path() -> str:
+	""" Load the path of the qualifications csv file and ensure it exists
+
+	Returns:
+		str: valid CSV file path
+	"""
 	file_exists = False
 
 	if args.path is not None:

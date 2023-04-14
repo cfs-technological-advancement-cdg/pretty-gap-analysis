@@ -2,7 +2,7 @@
 name = "pretty-gap"
 version = "0.1.0"
 description = ""
-authors = ["Phil Nickl <phil@philnickl.com>"]
+authors = ["Phil Nickl <hello@philnickl.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"

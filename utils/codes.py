@@ -19,3 +19,6 @@ def get_qualifications(path: str = "data/qualifications.json") -> list[object]:
 	data = json.load(open(path))
 
 	return data
+
+if __name__ == "__main__":
+    pass
