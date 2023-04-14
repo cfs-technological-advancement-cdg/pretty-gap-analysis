@@ -1,0 +1,4 @@
+{
+	"python.formatting.provider": "black",
+	"python.formatting.blackPath": ".venv/lib/python3.9/site-packages/black/"
+}

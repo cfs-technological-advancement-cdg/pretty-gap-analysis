@@ -8,8 +8,11 @@ authors = ["Phil Nickl <hello@philnickl.com>"]
 python = "^3.9"
 Jinja2 = "^3.1.2"
 arrow = "^1.2.3"
+pybeacon = {git = "https://github.com/NSWSESMembers/pybeacon.git", rev = "main"}
+requests-html = "^0.10.0"
 
 [tool.poetry.dev-dependencies]
+black = "^23.3.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

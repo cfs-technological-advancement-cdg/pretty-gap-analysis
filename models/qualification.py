@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import arrow
 
+
 @dataclass
 class Qualification:
     code: str
@@ -13,7 +14,7 @@ class Qualification:
             self.expiry = arrow.get(self.expiry, "D/M/YYYY")
 
     def in_date(self) -> bool:
-        """ Check if qualification has expired or not
+        """Check if qualification has expired or not
 
         Returns:
             bool: Returns True if the qualification is still valid, False if not
@@ -28,6 +29,7 @@ class Qualification:
 
         # Check if the expiry date is in the future
         return self.expiry.timestamp() > now.timestamp()
+
 
 if __name__ == "__main__":
     pass
