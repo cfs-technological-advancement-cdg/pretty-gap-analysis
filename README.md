@@ -17,9 +17,15 @@ If you don't know what this means, then this repository is probably not for you.
 ## Usage
 
 1. In the terminal, navigate to the project directory
-2. Run the command `poetry run python app.py`
+2. Run the command `poetry run python main.py`
 3. You will be prompted for the path of your qualifications CSV file
 4. A visual report will be generated and saved in the output folder
+
+## Options
+You can use the following command-line options to configure the running of the application:
+
+`-p --path`: Path of the input CSV file\
+`-o --output`: Filename for the generated html report
 
 ## Exporting Capability Data
 
