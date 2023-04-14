@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Member Capability Matrix</title>
+	<style type="text/css">
+		{% include "styles.css" %}
+	</style>
+</head>
+<body>
+	<h1>Member Capability Matrix</h1>
+	<table>
+		<thead>
+			<tr>
+				<td>Name</td>
+				{% for qual in qualifications %}
+					<td title="{{qual.name}}">
+						{% if qual.icon != None %}
+							<img src="https://bart-shared-files.s3-ap-southeast-2.amazonaws.com/IMAGES/{{qual.icon | upper}}" alt="{{qual.name}}">
+						{% else %}
+							{{ qual.code | replace("-ACC", "")}}
+						{% endif %}
+					</td>
+				{% endfor %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for member in members %}
+				<tr>
+					<td>{{member.name}}</td>
+					{% for qual in qualifications %}
+						{% if member.has_qual(qual.code) %}
+							<td class="{{member | cap_class(qual.code)}}" title="{{member.name}} - {{qual.name}} - ({{member | expires(qual.code)}})"></td>
+						{% else %}
+							<td class="{{member | cap_class(qual.code)}}" title="{{member.name}} - {{qual.name}}"></td>
+						{% endif %}
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<small>Last updated: {{time}}</small>
+</body>
